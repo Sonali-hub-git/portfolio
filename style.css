@@ -531,7 +531,7 @@ a {
 .modal-overlay {
   position: absolute;
   inset: 0;
-    background: rgba(0, 0, 0, 0.96);
+    background: rgba(0, 0, 0, 0.98);
   }
 
   .modal-panel {
@@ -541,19 +541,23 @@ a {
     padding: 34px;
     border-radius: 32px;
     background: #050816;
-  opacity: 0;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-  max-height: 90vh;
-  overflow: auto;
-}
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 45px 120px rgba(0,0,0,0.38);
+    transform: translateY(40px);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    max-height: 90vh;
+    overflow: auto;
+  }
 
-.modal.open .modal-panel {
-  transform: translateY(0);
-  opacity: 1;
-}
+  .modal.open .modal-panel {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
-.modal-close {
-  position: absolute;
+  body.modal-open {
+    overflow: hidden;
+  }
   top: 18px;
   right: 18px;
   width: 38px;
