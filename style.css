@@ -531,19 +531,16 @@ a {
 .modal-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(5,8,22,0.82);
-}
+    background: rgba(0, 0, 0, 0.96);
+  }
 
-.modal-panel {
-  position: relative;
-  z-index: 1;
-  width: min(92vw, 620px);
-  padding: 34px;
-  border-radius: 32px;
-  background: rgba(5, 8, 22, 0.96);
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 45px 120px rgba(0,0,0,0.38);
-  transform: translateY(40px);
+  .modal-panel {
+    position: relative;
+    z-index: 1;
+    width: min(92vw, 620px);
+    padding: 34px;
+    border-radius: 32px;
+    background: #050816;
   opacity: 0;
   transition: transform 0.35s ease, opacity 0.35s ease;
   max-height: 90vh;
