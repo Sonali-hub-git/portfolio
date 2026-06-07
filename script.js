@@ -152,12 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
     modalList.innerHTML = project.items.map((item) => `<li>${item}</li>`).join("");
     projectModal.classList.add("open");
     projectModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
   }
 
   function closeProjectModal() {
     if (!projectModal) return;
     projectModal.classList.remove("open");
     projectModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
   }
 
   projectButtons.forEach((button) => {
