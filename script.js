@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         mainNav.classList.remove("open");
+        menuToggle.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
       });
     });
