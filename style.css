@@ -709,14 +709,19 @@ body.modal-open {
     width: 100%;
     background: rgba(5,8,22,0.98);
     border-top: 1px solid rgba(255,255,255,0.08);
-    transform: translateY(-110%);
-    transition: transform 0.25s ease;
+    backdrop-filter: blur(16px);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
     overflow: hidden;
     z-index: 1001;
   }
 
   .main-nav.open {
     transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .main-nav ul {
@@ -733,10 +738,35 @@ body.modal-open {
     display: block;
     width: 100%;
     padding: 14px 24px;
+    color: var(--text);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .main-nav a:first-child {
+    border-top: none;
+  }
+
+  .main-nav a:hover,
+  .main-nav a:focus-visible {
+    color: var(--primary);
+    background: rgba(56,189,248,0.12);
   }
 
   .menu-toggle {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.08);
+    color: var(--text);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .menu-toggle:hover,
+  .menu-toggle:focus-visible {
+    background: rgba(56,189,248,0.16);
+    border-color: rgba(56,189,248,0.35);
   }
 
   .contact-copy a {
