@@ -286,6 +286,7 @@ a {
 
 .section {
   padding: 100px 0;
+  scroll-margin-top: 110px;
 }
 
 .section-grid {
@@ -531,33 +532,36 @@ a {
 .modal-overlay {
   position: absolute;
   inset: 0;
-    background: rgba(0, 0, 0, 0.98);
-  }
+  background: rgba(0, 0, 0, 0.98);
+}
 
-  .modal-panel {
-    position: relative;
-    z-index: 1;
-    width: min(92vw, 620px);
-    padding: 34px;
-    border-radius: 32px;
-    background: #050816;
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 45px 120px rgba(0,0,0,0.38);
-    transform: translateY(40px);
-    opacity: 0;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-    max-height: 90vh;
-    overflow: auto;
-  }
+.modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 620px);
+  padding: 34px;
+  border-radius: 32px;
+  background: #050816;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 45px 120px rgba(0,0,0,0.38);
+  transform: translateY(40px);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  max-height: 90vh;
+  overflow: auto;
+}
 
-  .modal.open .modal-panel {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.modal.open .modal-panel {
+  transform: translateY(0);
+  opacity: 1;
+}
 
-  body.modal-open {
-    overflow: hidden;
-  }
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-close {
+  position: absolute;
   top: 18px;
   right: 18px;
   width: 38px;
@@ -630,23 +634,43 @@ a {
   .main-nav ul {
     gap: 14px;
   }
+
+  .contact-grid {
+    gap: 28px;
+  }
+
+  .skill-grid,
+  .project-grid,
+  .testimonial-grid {
+    gap: 20px;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
-    width: min(100%, calc(100% - 30px));
+    width: min(100%, calc(100% - 28px));
   }
 
   .site-header {
-    padding: 14px 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 0;
+    background: rgba(5,8,22,0.98);
   }
 
   .header-inner {
     gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .brand {
+    flex: 1 1 auto;
   }
 
   .hero {
-    padding: 100px 0 50px;
+    padding: 140px 0 40px;
   }
 
   .hero-grid {
@@ -669,16 +693,26 @@ a {
     padding: 26px;
   }
 
+  .hero-stats div {
+    padding: 16px;
+  }
+
+  .project-card {
+    min-height: auto;
+  }
+
   .main-nav {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(5,8,22,0.96);
+    width: 100%;
+    background: rgba(5,8,22,0.98);
     border-top: 1px solid rgba(255,255,255,0.08);
-    transform: translateY(-100%);
+    transform: translateY(-110%);
     transition: transform 0.25s ease;
     overflow: hidden;
+    z-index: 1001;
   }
 
   .main-nav.open {
@@ -703,6 +737,11 @@ a {
 
   .menu-toggle {
     display: inline-flex;
+  }
+
+  .contact-copy a {
+    display: block;
+    word-break: break-all;
   }
 }
 
@@ -733,7 +772,57 @@ a {
   .testimonial-card,
   .detail-card,
   .visual-card {
-    padding: 22px;
+    padding: 20px;
+  }
+
+  .hero-grid {
+    gap: 18px;
+  }
+
+  .hero {
+    padding: 150px 0 40px;
+  }
+
+  .hero-stats {
+    gap: 14px;
+  }
+
+  .hero-stats strong {
+    font-size: 1.65rem;
+  }
+
+  .project-grid,
+  .testimonial-grid,
+  .skill-grid {
+    gap: 16px;
+  }
+
+  .contact-grid {
+    gap: 18px;
+  }
+
+  .contact-details {
+    gap: 10px;
+  }
+
+  .contact-methods {
+    gap: 10px;
+  }
+
+  .main-nav a {
+    padding: 14px 18px;
+  }
+
+  .visual-card ul {
+    gap: 12px;
+  }
+
+  .testimonial-card p {
+    margin-bottom: 16px;
+  }
+
+  .section {
+    padding: 80px 0;
   }
 }
 
